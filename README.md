@@ -1,27 +1,78 @@
-## **Yuna AI – Personal Cognitive Assistant**  
+## **Yuna AI – Personal Cognitive Assistant**
+
 **Version:** 1.0.0  
-📅 **Last Updated:** March 7, 2025  
+📅 **Last Updated:** March 15, 2025  
 
 ---
 
-### **🧠 What is Yuna AI?**  
-Yuna AI is a **personal cognitive assistant** designed to provide:  
-✅ **Long-term memory recall** (persistent storage)  
-✅ **Conversational AI capabilities** (via LLM)  
-✅ **Secure HTTPS communication**  
-✅ **FastAPI backend** with SQLite memory storage  
-✅ **Modern web UI** (Next.js frontend)
+### **🧠 What is Yuna AI?**
+
+Yuna AI is a **personal cognitive assistant** designed to provide:
+- ✅ **Long-term memory recall** (persistent storage)
+- ✅ **Conversational AI capabilities** (via LLM)
+- ✅ **Secure HTTPS communication**
+- ✅ **FastAPI backend** with SQLite memory storage
+- ✅ **Modern web UI** (Streamlit chat interface)
 
 ---
 
 ## **📂 Project Structure**
+
 ```
-Yuna-AI/ │ ├── src/ # Backend API & Core Logic │ ├── main.py # FastAPI application entry point │ ├── memory.py # Memory storage & retrieval system │ ├── database/ # Database interactions │ ├── models/ # AI models & processing │ ├── utils/ # Utility functions │ └── api/ # API endpoints │ ├── adaptive_decision_engine.py # Decision-making engine │ ├── cognitive_load_distribution.py # Optimizes resource allocation │ ├── cognitive_logic_unit.py # Core logic unit of Yuna AI │ ├── cognitive_reasoning_engine.py # Reasoning and inference processing │ ├── fastapi_app.py # FastAPI application setup │ ├── neural_optimization_feedback_loop.py # Feedback loop for continuous improvement │ ├── self_sustaining_ai_memory.py # Memory storage and management │ ├── streamlit_chat_ui.py # Frontend Streamlit chat interface │ ├── yuna_personality_behavioral_system.py # Personality and behavior management │ └── templates/ # HTML templates │ ├── frontend/ # Frontend code (Streamlit UI) │ ├── data/ # Stored data & logs │ ├── database/ # SQLite memory storage │ ├── yuna_log.txt # Debug logs │ ├── yuna_memory.json # Cached memory │ ├── yuna_tasks.json # Task tracking │ ├── scripts/ # Automation & server scripts │ ├── run_server.sh │ ├── generate_ssl.sh │ ├── migrate_db.py │ ├── init_db.py │ ├── setup_yuna.py # Script to set up and run the entire application │ ├── tests/ # Unit tests │ ├── test_api.py │ ├── test_chat.py │ ├── test_memory.py │ ├── config/ # Configuration files │ ├── config.ini │ ├── requirements.txt │ ├── README.md # Project documentation └── LICENSE # License information
+Yuna-AI/
+│
+├── src/              # Backend API & Core Logic
+│   ├── main.py       # FastAPI application entry point
+│   ├── memory.py     # Memory storage & retrieval system
+│   ├── database/     # Database interactions
+│   ├── models/       # AI models & processing
+│   ├── utils/        # Utility functions
+│   └── api/          # API endpoints
+│       ├── adaptive_decision_engine.py        # Decision-making engine
+│       ├── cognitive_load_distribution.py     # Optimizes resource allocation
+│       ├── cognitive_logic_unit.py           # Core logic unit of Yuna AI
+│       ├── cognitive_reasoning_engine.py     # Reasoning and inference processing
+│       ├── fastapi_app.py                    # FastAPI application setup
+│       ├── neural_optimization_feedback_loop.py # Feedback loop for continuous improvement
+│       ├── self_sustaining_ai_memory.py      # Memory storage and management
+│       ├── streamlit_chat_ui.py              # Frontend Streamlit chat interface
+│       ├── yuna_personality_behavioral_system.py # Personality and behavior management
+│       └── templates/                        # HTML templates
+│
+├── frontend/         # Streamlit Web Interface (Chat UI)
+│
+├── data/             # Stored data & logs
+│   ├── database/     # SQLite memory storage
+│   ├── yuna_log.txt  # Debug logs
+│   ├── yuna_memory.json  # Cached memory
+│   ├── yuna_tasks.json   # Task tracking
+│
+├── scripts/          # Automation & server scripts
+│   ├── run_server.sh
+│   ├── generate_ssl.sh
+│   ├── migrate_db.py
+│   ├── init_db.py
+│   ├── setup_yuna.py # Script to set up and run the entire application
+│
+├── tests/            # Unit tests
+│   ├── test_api.py
+│   ├── test_chat.py
+│   ├── test_memory.py
+│
+├── config/           # Configuration files
+│   ├── config.ini
+│   ├── requirements.txt
+│
+├── README.md         # Project documentation
+└── LICENSE           # License information
+```
 
 ---
 
 ## **🚀 Getting Started**
+
 ### **1️⃣ Install Dependencies**
+
 ```bash
 cd ~/Desktop/Yuna-AI
 python3 -m venv venv
@@ -30,41 +81,45 @@ pip install -r config/requirements.txt
 ```
 
 ### **2️⃣ Start the Backend (FastAPI)**
+
 ```bash
 uvicorn src.main:app --host 0.0.0.0 --port 8000 \
     --ssl-keyfile /home/yojimbo256/server.key \
     --ssl-certfile /home/yojimbo256/server.crt --reload
 ```
 
-### **3️⃣ Start the Frontend (Next.js)**
+### **3️⃣ Start the Frontend (Streamlit)**
+
 ```bash
-cd frontend/yuna-web
-npm install
-npm run dev
+streamlit run ~/Yuna-AI/src/api/streamlit_chat_ui.py
 ```
-🔗 Open the browser: **https://localhost:3000**
+
+🔗 Open the browser: **[https://localhost:8501](https://localhost:8501)**
 
 ---
 
 ## **🔍 Features & Capabilities**
-✅ **Secure HTTPS API** (self-signed SSL)  
-✅ **FastAPI Backend** with SQLite memory storage  
-✅ **Persistent Memory** via `long_term_memory.db`  
-✅ **Fuzzy Search** (search past conversations)  
-✅ **Multi-step Reasoning** (task breakdowns)  
-✅ **Local & Cloud AI Execution** (scalable)  
+
+- ✅ **Secure HTTPS API** (self-signed SSL)
+- ✅ **FastAPI Backend** with SQLite memory storage
+- ✅ **Persistent Memory** via `long_term_memory.db`
+- ✅ **Fuzzy Search** (search past conversations)
+- ✅ **Multi-step Reasoning** (task breakdowns)
+- ✅ **Local & Cloud AI Execution** (scalable)
 
 ---
 
 ## **💡 How to Use**
-1. **Chat with Yuna** via the **web UI** at `https://localhost:3000`.  
-2. Yuna **remembers conversations** and recalls relevant context.  
-3. Use `/history` API to **retrieve past interactions**.  
-4. Use `/chat` API to **send and receive AI responses**.  
+
+1. **Chat with Yuna** via the **web UI** at `https://localhost:8501`.
+2. Yuna **remembers conversations** and recalls relevant context.
+3. Use `/history` API to **retrieve past interactions**.
+4. Use `/chat` API to **send and receive AI responses**.
 
 ---
 
 ## **🛠️ Contributing**
+
 We welcome contributions!  
 - **Fork the repo** and create a new branch.  
 - **Submit a PR** for review.  
@@ -73,6 +128,7 @@ We welcome contributions!
 ---
 
 ## **📜 License**
+
 Yuna AI is **open-source software** licensed under the **MIT License**.  
 
 ---
