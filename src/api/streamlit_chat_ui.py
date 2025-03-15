@@ -1,5 +1,7 @@
 import streamlit as st
+# Streamlit chat UI to interact with Yuna
 import subprocess
+from yuna_personality_behavioral_system import YunaPersonalityBehavioralStructuring  # New import
 
 # Set up Streamlit UI
 st.set_page_config(page_title="Yuna Chat", page_icon="🤖", layout="wide")

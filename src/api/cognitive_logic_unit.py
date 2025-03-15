@@ -4,6 +4,8 @@ import redis
 import os
 import subprocess
 from pydantic import BaseModel
+# Import 'app' or whatever components are in this file from:
+from src.api.cognitive_logic_unit import *  # Or the specific functions you need from this module
 
 # Initialize FastAPI app
 app = FastAPI()

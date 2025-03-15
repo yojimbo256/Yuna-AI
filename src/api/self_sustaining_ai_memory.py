@@ -3,6 +3,7 @@ import chromadb
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
+# FastAPI app should only be initialized once
 app = FastAPI()
 
 # SQLite Database Path
@@ -32,6 +33,7 @@ def init_db():
     conn.commit()
     conn.close()
 
+# Initialize DB on start
 init_db()
 
 @app.post("/memory/store")

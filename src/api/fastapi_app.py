@@ -5,6 +5,9 @@ import os
 import subprocess
 from pydantic import BaseModel
 import httpx  # For async API calls to SSAM
+from cognitive_logic_unit import app
+from cognitive_load_distribution import app
+from neural_optimization_feedback_loop import app
 
 app = FastAPI()
 
