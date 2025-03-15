@@ -16,42 +16,7 @@ Yuna AI is a **personal cognitive assistant** designed to provide:
 
 ## **📂 Project Structure**
 ```
-Yuna-AI/
-│
-├── src/              # Backend API & Core Logic
-│   ├── main.py       # FastAPI application entry point
-│   ├── memory.py     # Memory storage & retrieval system
-│   ├── database/     # Database interactions
-│   ├── models/       # AI models & processing
-│   ├── utils/        # Utility functions
-│   └── api/          # API endpoints
-│
-├── frontend/         # Next.js Web Interface (Chat UI)
-│
-├── data/             # Stored data & logs
-│   ├── database/     # SQLite memory storage
-│   ├── yuna_log.txt  # Debug logs
-│   ├── yuna_memory.json  # Cached memory
-│   ├── yuna_tasks.json   # Task tracking
-│
-├── scripts/          # Automation & server scripts
-│   ├── run_server.sh
-│   ├── generate_ssl.sh
-│   ├── migrate_db.py
-│   ├── init_db.py
-│
-├── tests/            # Unit tests
-│   ├── test_api.py
-│   ├── test_chat.py
-│   ├── test_memory.py
-│
-├── config/           # Configuration files
-│   ├── config.ini
-│   ├── requirements.txt
-│
-├── README.md         # Project documentation
-└── LICENSE           # License information
-```
+Yuna-AI/ │ ├── src/ # Backend API & Core Logic │ ├── main.py # FastAPI application entry point │ ├── memory.py # Memory storage & retrieval system │ ├── database/ # Database interactions │ ├── models/ # AI models & processing │ ├── utils/ # Utility functions │ └── api/ # API endpoints │ ├── adaptive_decision_engine.py # Decision-making engine │ ├── cognitive_load_distribution.py # Optimizes resource allocation │ ├── cognitive_logic_unit.py # Core logic unit of Yuna AI │ ├── cognitive_reasoning_engine.py # Reasoning and inference processing │ ├── fastapi_app.py # FastAPI application setup │ ├── neural_optimization_feedback_loop.py # Feedback loop for continuous improvement │ ├── self_sustaining_ai_memory.py # Memory storage and management │ ├── streamlit_chat_ui.py # Frontend Streamlit chat interface │ ├── yuna_personality_behavioral_system.py # Personality and behavior management │ └── templates/ # HTML templates │ ├── frontend/ # Frontend code (Streamlit UI) │ ├── data/ # Stored data & logs │ ├── database/ # SQLite memory storage │ ├── yuna_log.txt # Debug logs │ ├── yuna_memory.json # Cached memory │ ├── yuna_tasks.json # Task tracking │ ├── scripts/ # Automation & server scripts │ ├── run_server.sh │ ├── generate_ssl.sh │ ├── migrate_db.py │ ├── init_db.py │ ├── setup_yuna.py # Script to set up and run the entire application │ ├── tests/ # Unit tests │ ├── test_api.py │ ├── test_chat.py │ ├── test_memory.py │ ├── config/ # Configuration files │ ├── config.ini │ ├── requirements.txt │ ├── README.md # Project documentation └── LICENSE # License information
 
 ---
 
