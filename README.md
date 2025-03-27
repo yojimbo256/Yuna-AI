@@ -1,113 +1,129 @@
-## **Yuna AI – Personal Cognitive Assistant**  
+# 🧠 Yuna AI – Personal Cognitive Assistant
+
 **Version:** 1.0.0  
-📅 **Last Updated:** March 7, 2025  
+📅 **Last Updated:** March 15, 2025  
 
 ---
 
-### **🧠 What is Yuna AI?**  
-Yuna AI is a **personal cognitive assistant** designed to provide:  
-✅ **Long-term memory recall** (persistent storage)  
-✅ **Conversational AI capabilities** (via LLM)  
-✅ **Secure HTTPS communication**  
-✅ **FastAPI backend** with SQLite memory storage  
-✅ **Modern web UI** (Next.js frontend)
+## 🌟 What is Yuna?
+
+**Yuna AI** is a **modular cognitive assistant** designed to support **personal memory recall, behavioral adaptation, and reasoning** through a flexible, API-first architecture.
+
+Key features:
+- ✅ Persistent long-term memory with vector search
+- ✅ Conversational reasoning powered by LLMs
+- ✅ Behavior adaptation through feedback loops
+- ✅ Cloud GPU offloading for compute-heavy tasks
+- ✅ FastAPI backend + Streamlit UI for local interaction
 
 ---
 
-## **📂 Project Structure**
-```
+## 🧩 Architecture Overview
+
+```text
 Yuna-AI/
 │
-├── src/              # Backend API & Core Logic
-│   ├── main.py       # FastAPI application entry point
-│   ├── memory.py     # Memory storage & retrieval system
-│   ├── database/     # Database interactions
-│   ├── models/       # AI models & processing
-│   ├── utils/        # Utility functions
-│   └── api/          # API endpoints
+├── src/
+│   └── api/
+│       ├── adaptive_decision_engine.py              # ADE: Core decision-making engine
+│       ├── cognitive_load_distribution.py           # CLD: Offloads tasks to local/cloud GPU
+│       ├── cognitive_logic_unit.py                  # CLU: Main message routing & logic engine
+│       ├── cognitive_reasoning_engine.py            # CRE: Reasoning, inference, knowledge querying
+│       ├── fastapi_app.py                           # FastAPI app wiring
+│       ├── neural_optimization_feedback_loop.py     # NOFL: Feedback loop & learning adjustment
+│       ├── self_sustaining_ai_memory.py             # SSAM: Stores & retrieves contextual memory
+│       ├── streamlit_chat_ui.py                     # Local testing UI (Streamlit)
+│       ├── yuna_personality_behavioral_system.py    # YPBS: Tone, emotion, persona shaping
+│       └── templates/                               # Streamlit templates
 │
-├── frontend/         # Next.js Web Interface (Chat UI)
+├── data/
+│   ├── database/                 # SQLite files
+│   ├── yuna_log.txt             # Logs
+│   ├── yuna_memory.json         # Optional memory snapshot
+│   ├── yuna_tasks.json          # Task queue (planned)
 │
-├── data/             # Stored data & logs
-│   ├── database/     # SQLite memory storage
-│   ├── yuna_log.txt  # Debug logs
-│   ├── yuna_memory.json  # Cached memory
-│   ├── yuna_tasks.json   # Task tracking
-│
-├── scripts/          # Automation & server scripts
-│   ├── run_server.sh
-│   ├── generate_ssl.sh
-│   ├── migrate_db.py
+├── scripts/
+│   ├── setup_yuna.py            # Local launcher & automation
 │   ├── init_db.py
+│   ├── migrate_db.py
+│   ├── generate_ssl.sh
 │
-├── tests/            # Unit tests
-│   ├── test_api.py
-│   ├── test_chat.py
+├── tests/
 │   ├── test_memory.py
+│   ├── test_chat.py
+│   └── test_api.py
 │
-├── config/           # Configuration files
+├── config/
 │   ├── config.ini
-│   ├── requirements.txt
+│   └── requirements.txt
 │
-├── README.md         # Project documentation
-└── LICENSE           # License information
+├── frontend/                    # Placeholder for future React.js migration
+├── README.md
+└── LICENSE
 ```
 
 ---
 
-## **🚀 Getting Started**
-### **1️⃣ Install Dependencies**
+## 🚀 Getting Started
+
+### 1️⃣ Set up environment
+
 ```bash
-cd ~/Desktop/Yuna-AI
+cd ~/Yuna-AI
 python3 -m venv venv
 source venv/bin/activate
 pip install -r config/requirements.txt
 ```
 
-### **2️⃣ Start the Backend (FastAPI)**
+### 2️⃣ Launch backend + Streamlit UI
+
 ```bash
-uvicorn src.main:app --host 0.0.0.0 --port 8000 \
-    --ssl-keyfile /home/yojimbo256/server.key \
-    --ssl-certfile /home/yojimbo256/server.crt --reload
+export PYTHONPATH=$(pwd)/src
+uvicorn src.api.cognitive_logic_unit:app --port 5002 --reload &
+uvicorn src.api.cognitive_reasoning_engine:app --port 5003 --reload &
+uvicorn src.api.self_sustaining_ai_memory:app --port 5004 --reload &
+streamlit run src/api/streamlit_chat_ui.py
 ```
 
-### **3️⃣ Start the Frontend (Next.js)**
-```bash
-cd frontend/yuna-web
-npm install
-npm run dev
-```
-🔗 Open the browser: **https://localhost:3000**
+🔗 Visit: [http://localhost:8501](http://localhost:8501)
 
 ---
 
-## **🔍 Features & Capabilities**
-✅ **Secure HTTPS API** (self-signed SSL)  
-✅ **FastAPI Backend** with SQLite memory storage  
-✅ **Persistent Memory** via `long_term_memory.db`  
-✅ **Fuzzy Search** (search past conversations)  
-✅ **Multi-step Reasoning** (task breakdowns)  
-✅ **Local & Cloud AI Execution** (scalable)  
+## 🔍 Core Capabilities
+
+- 🧠 Memory Recall Engine (SSAM + SQLite + ChromaDB)
+- 🤖 Reasoning & Inference (CRE + LLM)
+- 🔁 Adaptive Learning Loop (NOFL + feedback tracking)
+- 👤 Personalized Behavior (YPBS + emotion tone)
+- ⚙️ Decision Engine (ADE + logic graphing)
+- ☁️ Cloud/Local Task Offloading (CLD + cloud GPU API)
 
 ---
 
-## **💡 How to Use**
-1. **Chat with Yuna** via the **web UI** at `https://localhost:3000`.  
-2. Yuna **remembers conversations** and recalls relevant context.  
-3. Use `/history` API to **retrieve past interactions**.  
-4. Use `/chat` API to **send and receive AI responses**.  
+## 🧪 How to Use
+
+1. Open the UI and chat with Yuna.
+2. Messages are routed through CLU → CRE → SSAM.
+3. Results are returned, and memory is updated.
+4. Feedback is routed to NOFL to improve responses over time.
 
 ---
 
-## **🛠️ Contributing**
-We welcome contributions!  
-- **Fork the repo** and create a new branch.  
-- **Submit a PR** for review.  
-- **Report bugs** via GitHub issues.  
+## 👨‍💻 Contributing
+
+We welcome contributions:
+
+- Fork & PR for new modules
+- Suggestions for model optimization
+- Prototypes for better UI (React preferred)
 
 ---
 
-## **📜 License**
-Yuna AI is **open-source software** licensed under the **MIT License**.  
+## 📄 License
+
+**MIT License** – Open-source and built for research, collaboration, and future innovation.
 
 ---
+
+> 👁️ For patent or academic inquiries, contact the project lead directly. This repo supports an active **PhD dissertation** in adaptive AI systems.
+
