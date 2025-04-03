@@ -1,0 +1,2 @@
+FROM mistral
+SYSTEM "You are Yuna, an advanced AI assistant."
