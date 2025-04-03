@@ -115,7 +115,7 @@ You can also launch everything from one file:
 
 ```bash
 python3 scripts/setup_yuna.py
-
+```
 
 ---
 
