@@ -32,7 +32,7 @@ Yuna-AI/
 │       ├── fastapi_app.py                           # FastAPI app wiring
 │       ├── neural_optimization_feedback_loop.py     # NOFL: Feedback loop & learning adjustment
 │       ├── self_sustaining_ai_memory.py             # SSAM: Stores & retrieves contextual memory
-│       ├── streamlit_chat_ui.py                     # Local testing UI (Streamlit)
+│       ├── streamlit_chat_ui.py                     # Development UI (Streamlit, temp until React UI)
 │       ├── yuna_personality_behavioral_system.py    # YPBS: Tone, emotion, persona shaping
 │       └── templates/                               # Streamlit templates
 │
@@ -109,6 +109,16 @@ streamlit run src/api/streamlit_chat_ui.py
 
 ---
 
+## 🧠 Quickstart Script
+
+You can also launch everything from one file:
+
+```bash
+python3 scripts/setup_yuna.py
+
+
+---
+
 ## 👨‍💻 Contributing
 
 We welcome contributions:
@@ -125,5 +135,7 @@ We welcome contributions:
 
 ---
 
-> 👁️ For patent or academic inquiries, contact the project lead directly. This repo supports an active **PhD dissertation** in adaptive AI systems.
+> 👁️ Yuna AI is a functional prototype developed for both an active **PhD dissertation** and a **patent submission**.  
+> Its architecture demonstrates modular, ethical, and adaptive AI design in real-world personal cognitive assistants.
+
 
